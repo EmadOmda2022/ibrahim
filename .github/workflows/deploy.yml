@@ -15,7 +15,17 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # التعديل النهائي للمسار الصحيح
-            cd /home/shorabalawfirm/htdocs/shorabalawfirm.com
-            git pull origin main
-            php artisan config:cache
+            SITE_DIR="/home/shorabalawfirm/htdocs/shorabalawfirm.com"
+            run_deploy() {
+              cd "$SITE_DIR"
+              git pull origin main
+              composer install --no-dev --optimize-autoloader
+              php artisan migrate --force
+              php artisan config:cache
+              php artisan route:cache
+            }
+            if run_deploy; then
+              exit 0
+            fi
+            # fallback to site user (common in CloudPanel)
+            sudo -u shorabalawfirm -H bash -lc "cd \"$SITE_DIR\" && git pull origin main && composer install --no-dev --optimize-autoloader && php artisan migrate --force && php artisan config:cache && php artisan route:cache"
