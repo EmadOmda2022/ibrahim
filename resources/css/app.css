@@ -1,0 +1,46 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'IBM Plex Sans Arabic', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@layer base {
+    :root {
+        --font-body: 'IBM Plex Sans Arabic', ui-sans-serif, system-ui, sans-serif;
+        --font-display: 'Cairo', ui-sans-serif, system-ui, sans-serif;
+
+        --page-bg: #f6efe6;
+        --card: #fffdf9;
+        --sand: #f0ddc7;
+        --ink: #1f1611;
+        --muted: #705a4b;
+        --line: rgba(86, 50, 29, 0.12);
+        --line-strong: rgba(86, 50, 29, 0.24);
+        --accent: #c88f5a;
+        --accent-strong: #8b4b22;
+
+        --dashboard-bg: #edf3f7;
+        --dashboard-panel: #fefefe;
+        --dashboard-tile: #f7fafc;
+        --dashboard-ink: #13212d;
+        --dashboard-muted: #60717f;
+        --dashboard-line: rgba(31, 53, 70, 0.1);
+        --dashboard-line-strong: rgba(31, 53, 70, 0.22);
+        --dashboard-accent: #0d6a87;
+        --dashboard-accent-soft: rgba(13, 106, 135, 0.1);
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: var(--font-body);
+    }
+}
