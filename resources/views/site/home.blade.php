@@ -29,7 +29,7 @@
                     </span>
                     <div class="space-y-5">
                         <h1 class="max-w-4xl font-[var(--font-display)] text-5xl font-extrabold leading-[1.05] text-[var(--ink)] lg:text-7xl">
-                            مكتب قانوني حديث يبني الثقة قبل أن يربح القضية.
+                            مكتب قانوني حديث .
                         </h1>
                         <p class="max-w-2xl text-lg leading-8 text-[var(--muted)]">
                             نساعد الأفراد والشركات على إدارة النزاعات، صياغة العقود، وحماية القرار القانوني بخبرة عملية
